@@ -1,8 +1,8 @@
 const emailField = 'form>div>div>label>div>div>input[name="email"]'
 const passwordField = 'form>div>div>label>div>div>input[name="password"]'
 const logInButton = '//button[text()="Log in"]'
-const errorMesage = 'div>div>span[class*="Message__MessageCopy"]'
-const emptyFieldErrorMesage = 'div:first-child>label>div>div[class*="TextField__Error"]'
+const errorMesage = 'span[class*="Message__MessageCopy"]'
+const emptyFieldErrorMesage = 'div:first-child>label:first-child>div>div[class*="TextField__ErrorMessage"]'
 const rememberMyEmailAddressButton = 'svg[aria-hidden="true"]'
 
 class SignInPage {
@@ -16,16 +16,19 @@ class SignInPage {
         await $(passwordField).setValue(Password)
     }
     async clickLogInButton() {
-        await $(emailField).waitForExist()
+        await $(logInButton).waitForClickable()
         await $(logInButton).click()
     }
-    async checkErrorMesageVisibility() {
-        await expect(await $(errorMesage)).toBeDisplayed() == true
-        await browser.switchWindow('/')
+    async checkErrorMesageVisibility(text) {
+        await $(errorMesage).waitForDisplayed()
+        await expect(await $(errorMesage)).toHaveText(text) == true
     }
-    async checkEmptyFieldErrorMesageVisibility() {
-        await expect(await $(emptyFieldErrorMesage)).toBeDisplayed() == true
-        await browser.switchWindow('/')
+    async checkEmptyFieldErrorMesageVisibility(text) {
+        await $(emptyFieldErrorMesage).waitForDisplayed()
+        if (await ($(emptyFieldErrorMesage).isDisplayedInViewport()) == false){
+            await $(logInButton).click();
+        }
+        await expect(await $(emptyFieldErrorMesage)).toHaveText(text) == true
     }
     async clickRememberMyEmailAddressButton() {
         await $(rememberMyEmailAddressButton).click()

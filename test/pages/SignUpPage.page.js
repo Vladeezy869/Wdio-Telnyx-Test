@@ -53,14 +53,21 @@ class SignUpPage {
         await $(logInLinkButton).click()
     }
     async clickTelnyxsTermsLinkButton() {
+        const elem = await $(telnyxsTermsLinkButton)
+        await browser.execute(function (elem) {
+            elem.removeAttribute('target');
+        }, elem);
         await $(telnyxsTermsLinkButton).click()
     }
     async checkTitleTextVisibility() {
         await $(titleText).waitForDisplayed(5000)
         await expect(await $(titleText)).toBeDisplayed() == true
-        await browser.switchWindow('/')
     }
     async clickPrivacyPolicyLinkButton() {
+        const elem = await $(privacyPolicyLinkButton)
+        await browser.execute(function (elem) {
+            elem.removeAttribute('target');
+        }, elem);
         await $(privacyPolicyLinkButton).click()
     }
     async clickPromoCodeButton() {

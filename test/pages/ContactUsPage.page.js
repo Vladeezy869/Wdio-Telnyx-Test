@@ -11,10 +11,10 @@ const describeYourRequestField = '#Form_Additional_Information__c'
 const submitButton = '[type="Submit"]'
 const submitMessageText = 'h1>span'
 const howDidYouHearAboutTelnyxField = '#How_did_you_hear_about_Telnyx_Open__c'
-const logInButton = 'li[title="Contact us related resources 2"] a[title]>span:first-child'
-const supportCenerLinkButton = 'a[href="https://support.telnyx.com/en/"]>span'
+const logInButton = 'li[title="Contact us related resources 2"] a[title]'
+const supportCenerLinkButton = 'p>a[href="https://support.telnyx.com/en/"]'
 const supportCenerText = 'section>h1'
-const errorMessageText = '#email_message'
+const errorMessageText = '#ValidMsgReason_for_Contact__c'
 
 class ContactUsPage {
     async selectSupportOptionInReasonForContactDropdown() {
@@ -53,12 +53,20 @@ class ContactUsPage {
         await $(howDidYouHearAboutTelnyxField).setValue(Text)
     }
     async clickLogInLinkButton() {
+        const elem = await $(logInButton)
+        await browser.execute(function (elem) {
+            elem.removeAttribute('target');
+        }, elem);
         await $(logInButton).click()
     }
     async scrollToLogInLinkButton() {
         await $(logInButton).scrollIntoView()
     }
     async clickSupportCenerLinkButton() {
+        const elem = await $(supportCenerLinkButton)
+        await browser.execute(function (elem) {
+            elem.removeAttribute('target');
+        }, elem);
         await $(supportCenerLinkButton).click()
     }
     async scrollToSupporCenerLinkButton() {

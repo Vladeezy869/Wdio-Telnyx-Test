@@ -10,9 +10,13 @@
     "wdio-chromedriver-service": "^8.1.1"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js",
+    "wdio": "wdio run ./configs/wdio.conf.js",
+    "wdio-firefox": "npx wdio run ./configs/wdio.firefox.conf.js",
+    "wdio-edge": "npx wdio run ./configs/wdio.edge.conf.js",
+    "wdio-chrome": "npx wdio run ./configs/wdio.chrome.conf.js",
     "report-generate": "npx allure generate allure-results --clean",
     "report-open": "npx allure open allure-report"
+
   },
   "dependencies": {
     "@wdio/allure-reporter": "^8.11.0",

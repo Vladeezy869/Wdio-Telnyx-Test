@@ -9,6 +9,7 @@ class MissionControlPage {
         await expect(await $(industryLeadingLincButton)).toBeDisplayed()
     }
     async checkTopicTextMaching(text) {
+        await $(topicText).waitForClickable()
         await expect(await $(topicText)).toHaveText(text)
     }
     async clickIndustryLeadingLincButton() {

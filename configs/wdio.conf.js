@@ -23,7 +23,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/*.js'
+        './../test/specs/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -129,8 +129,8 @@ exports.config = {
         disableWebdriverStepsReporting: true,
         disableWebdriverScreenshotsReporting: false,
     }]],
-    afterStep: async function ({ error }) {
-        if (error) {
+    afterTest: async function ({ error }) {
+        if (!error) {
           await browser.takeScreenshot();
         }
     },

@@ -40,6 +40,7 @@ describe('Testing telnyx with webdriverIO', function() {
         await NumbersPricingPage.selectCanadaOptionInPayAsYouGoDropdown()
         await NumbersPricingPage.checkUsingAnExistingNumberTextVisibility()
         await NumbersPricingPage.selectUkraineOptionInPayAsYouGoDropdown()
+        await NumbersPricingPage.checkUsingAnExistingNumberTextNotVisible()
     })
     it('TX_002 Test the Sign up form with positive scenario, form opened via link from the "Global Numbers" page', async () =>{
         await MainPage.clickProductsDropdown()
@@ -162,14 +163,14 @@ describe('Testing telnyx with webdriverIO', function() {
         await SignUpPage.clickSubmitButton()
         await SignUpPage.checkSubmitMessageVisibility()
     })
-    it.only('TX_014 Test Sign In form from Sign Up page with negative scenario where all fields are filled with incorrect credentials', async () =>{
+    it('TX_014 Test Sign In form from Sign Up page with negative scenario where all fields are filled with incorrect credentials', async () =>{
         await MainPage.clickSignUpButton()
         await SignUpPage.scrollToLogInLinkButton()
         await SignUpPage.clickLogInLinkButton()
         await SignInPage.enterEmailFieldValue(Email)
         await SignInPage.enterPasswordFieldValue(Password)
         await SignInPage.clickLogInButton()
-        let text = 'That email and password combinations is not valid'
+        let text = 'That email and password combination is not valid, or your browser could not be authenticated via recaptcha. Please try again.'
         await SignInPage.checkErrorMesageVisibility(text)
     })
     it('TX_015 Test Sign In form from Sign Up page with negative scenario when all fields are left empty', async () =>{
@@ -188,7 +189,7 @@ describe('Testing telnyx with webdriverIO', function() {
         await SignInPage.enterPasswordFieldValue(Password)
         await SignInPage.clickRememberMyEmailAddressButton()
         await SignInPage.clickLogInButton()
-        let text = 'That email and password combinations is not valid'
+        let text = 'That email and password combination is not valid, or your browser could not be authenticated via recaptcha. Please try again.'
         await SignInPage.checkErrorMesageVisibility(text)
     })
     it('TX_017 Chech that "Support Center" link navigate to "Support Center" page from the "Contact us" page', async () =>{

@@ -3,7 +3,7 @@ const productsDropdown = '//header/div/div/div/nav/button/div/span/span[contains
 const globalNumbersPricingOption = 'div>a[href="/pricing/numbers"]>span'
 const globalNumbersProductsOption = 'a[href="/products/phone-numbers"]>span>span'
 const whyTelnyxDropdown = '//header/div/div/div/nav/button/div/span/span[contains(text(),"Why Telnyx")]'
-const partnersOption = 'a[href="/partnerships"]>span'
+const partnersOption = 'a[href="/partnerships"][id]>span>span'
 const solutionsButton = 'header>div>div>div>nav>a[href="/solutions"]'
 const missionControlOption = '[href="/mission-control"]>span'
 const smsApiOption = '[href="/products/sms-api"]>span'
@@ -18,24 +18,29 @@ class MainPage {
         await $(productsDropdown).click()
     }
     async clickGlobalNumbersPricingOption() {
+        await $(globalNumbersPricingOption).waitForClickable()
         await $(globalNumbersPricingOption).click()
     }
     async clickGlobalNumbersProductsOption() {
+        await $(globalNumbersProductsOption).waitForClickable()
         await $(globalNumbersProductsOption).click()
     }
     async clickWhyTelnyxDropdown() {
         await $(whyTelnyxDropdown).click()
     }
     async clickPartnersOption() {
+        await $(partnersOption).waitForClickable()
         await $(partnersOption).click()
     }
     async clickSolutionsButton() {
         await $(solutionsButton).click()
     }
     async clickMissionControlOption() {
+        await $(missionControlOption).waitForClickable()
         await $(missionControlOption).click()
     }
     async clickSmsApiOption() {
+        await $(smsApiOption).waitForClickable()
         await $(smsApiOption).click()
     }
     async clickContactUsButton() {
