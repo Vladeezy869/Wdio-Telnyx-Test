@@ -1,4 +1,4 @@
-name: Telnyx Tests
+name: Wdio Telnyx Test
 on:
   push:
     branches: [ main ]
@@ -24,7 +24,9 @@ jobs:
       
     - name: Reports Generate
       run: npm run report-generate
-      run: report-open
+      
+    - name: Reports Open
+      run: npm run report-open
     
     - uses: actions/upload-artifact@master
       with:
