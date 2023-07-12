@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "div>a[title=\"Partnerships - Hero - CTA\"]>span:first-child"
+}

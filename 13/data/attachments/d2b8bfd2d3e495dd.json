@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "form[aria-label=\"signup-form\"]>button[type=\"submit\"]>span:first-child"
+}

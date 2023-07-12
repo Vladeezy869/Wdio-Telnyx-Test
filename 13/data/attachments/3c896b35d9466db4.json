@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//option[text()=\"Canada (+1)\"]"
+}
