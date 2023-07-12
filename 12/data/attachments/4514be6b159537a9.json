@@ -1,0 +1,5 @@
+{
+  "error": "no such element",
+  "message": "no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"span[class*=\"Message__MessageCopy\"]\"}\n  (Session info: headless chrome=114.0.5735.198)",
+  "stacktrace": "#0 0x55dedbc014e3 <unknown>\n#1 0x55dedb930c76 <unknown>\n#2 0x55dedb96cc96 <unknown>\n#3 0x55dedb96cdc1 <unknown>\n#4 0x55dedb9a67f4 <unknown>\n#5 0x55dedb98c03d <unknown>\n#6 0x55dedb9a430e <unknown>\n#7 0x55dedb98bde3 <unknown>\n#8 0x55dedb9612dd <unknown>\n#9 0x55dedb96234e <unknown>\n#10 0x55dedbbc13e4 <unknown>\n#11 0x55dedbbc53d7 <unknown>\n#12 0x55dedbbcfb20 <unknown>\n#13 0x55dedbbc6023 <unknown>\n#14 0x55dedbb941aa <unknown>\n#15 0x55dedbbea6b8 <unknown>\n#16 0x55dedbbea847 <unknown>\n#17 0x55dedbbfa243 <unknown>\n#18 0x7f0c55371b43 <unknown>\n"
+}

@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//header/div/div/div/nav/button/div/span/span[contains(text(),\"Why Telnyx\")]"
+}

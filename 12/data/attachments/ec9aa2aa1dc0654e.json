@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "section>div>div:first-child>strong:first-child"
+}

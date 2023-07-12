@@ -1,0 +1,9 @@
+{
+  "script": "return (function (elem) {\n            elem.removeAttribute('target');\n        }).apply(null, arguments)",
+  "args": [
+    {
+      "element-6066-11e4-a52e-4f735466cecf": "1577FF0C49EEFD844ACAEAAE2645A309_element_805",
+      "ELEMENT": "1577FF0C49EEFD844ACAEAAE2645A309_element_805"
+    }
+  ]
+}
