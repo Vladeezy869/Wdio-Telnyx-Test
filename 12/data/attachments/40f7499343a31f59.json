@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "li[title=\"Contact us related resources 2\"] a[title]"
+}

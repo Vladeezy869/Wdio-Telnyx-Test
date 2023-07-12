@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "a[title=\"[Talk to sales] Global Numbers - Button\"]:first-child"
+}

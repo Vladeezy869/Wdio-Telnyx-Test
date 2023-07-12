@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "a[href=\"/products/phone-numbers\"]>span>span"
+}

@@ -1,0 +1,5 @@
+{
+  "error": "no such element",
+  "message": "no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"div>a[title=\"Partnerships - Hero - CTA\"]>span:first-child\"}\n  (Session info: headless chrome=114.0.5735.198)",
+  "stacktrace": "#0 0x55ba80c114e3 <unknown>\n#1 0x55ba80940c76 <unknown>\n#2 0x55ba8097cc96 <unknown>\n#3 0x55ba8097cdc1 <unknown>\n#4 0x55ba809b67f4 <unknown>\n#5 0x55ba8099c03d <unknown>\n#6 0x55ba809b430e <unknown>\n#7 0x55ba8099bde3 <unknown>\n#8 0x55ba809712dd <unknown>\n#9 0x55ba8097234e <unknown>\n#10 0x55ba80bd13e4 <unknown>\n#11 0x55ba80bd53d7 <unknown>\n#12 0x55ba80bdfb20 <unknown>\n#13 0x55ba80bd6023 <unknown>\n#14 0x55ba80ba41aa <unknown>\n#15 0x55ba80bfa6b8 <unknown>\n#16 0x55ba80bfa847 <unknown>\n#17 0x55ba80c0a243 <unknown>\n#18 0x7f3018b9ab43 <unknown>\n"
+}
