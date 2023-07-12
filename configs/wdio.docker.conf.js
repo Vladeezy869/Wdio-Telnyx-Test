@@ -12,8 +12,8 @@ const dockerConfig = {
             browserName: "chrome",
             acceptInsecureCerts: true,
             "goog:chromeOptions": {
-                args: ["--headless"],
-            },
+                args: ['--headless', '--start-maximized', '--no-sandbox', '--disable-gpu', '--window-size=1920,1080', '--allow-insecure-localhost'],
+        },
         },
         {
             maxInstances: 2,
