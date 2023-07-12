@@ -49,7 +49,7 @@ exports.config = {
 	//
 	capabilities: [
 		{
-			maxInstances: 2,
+			maxInstances: 1,
 			browserName: "chrome",
 			acceptInsecureCerts: true,
 			"goog:chromeOptions": {
@@ -57,26 +57,23 @@ exports.config = {
 					"--headless",
 					"--start-maximized",
 					"--no-sandbox",
-					"--disable-gpu",
-					"--window-size=1920,1080",
-					"--allow-insecure-localhost",
 				],
 			},
 		},
-		{
-			maxInstances: 2,
-			browserName: "MicrosoftEdge",
-			"ms:edgeOptions": {
-				args: ["--start-maximized"],
-			},
-		},
-		{
-			maxInstances: 2,
-			browserName: "firefox",
-			"moz:firefoxOptions": {
-				args: ["--start-maximized"],
-			},
-		},
+		// {
+		// 	maxInstances: 1,
+		// 	browserName: "MicrosoftEdge",
+		// 	"ms:edgeOptions": {
+		// 		args: ["--start-maximized"],
+		// 	},
+		// },
+		// {
+		// 	maxInstances: 1,
+		// 	browserName: "firefox",
+		// 	"moz:firefoxOptions": {
+		// 		args: ["--start-maximized"],
+		// 	},
+		// },
 	],
 	//
 	// ===================

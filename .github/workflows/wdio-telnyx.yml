@@ -15,7 +15,7 @@ jobs:
               
             - name: Tests execution
               continue-on-error: true
-              run: npx wdio run configs/wdio.chrome.conf.js
+              run: npx wdio run configs/wdio.crossbrowser.js
           
             - name: Get Allure history
               uses: actions/checkout@v2

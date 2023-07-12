@@ -7,13 +7,14 @@
     "@wdio/mocha-framework": "^7.26.0",
     "@wdio/selenium-standalone-service": "^7.26.0",
     "@wdio/spec-reporter": "^7.26.0",
-    "chromedriver": "^107.0.3",
+    "chromedriver": "^114.0",
     "wdio-chromedriver-service": "^8.0.0"
 },
   "scripts": {
     "wdio": "wdio run ./configs/wdio.conf.js",
     "wdio-firefox": "npx wdio run ./configs/wdio.firefox.conf.js",
     "wdio-edge": "npx wdio run ./configs/wdio.edge.conf.js",
+    "wdio-cross": "wdio run ./configs/wdio.crossbrowser.js",
     "wdio-chrome": "npx wdio run ./configs/wdio.chrome.conf.js",
     "report-generate": "npx allure generate allure-results --clean",
     "report-open": "npx allure open allure-report",
