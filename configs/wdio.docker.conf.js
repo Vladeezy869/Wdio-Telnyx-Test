@@ -5,7 +5,7 @@ const dockerConfig = {
     hostname: "localhost",
     port: 4444,
     path: "/",
-    services: [["docker"]],
+    services: ["docker"],
     capabilities: [
         {
             maxInstances: 2,

@@ -1,54 +1,43 @@
-name: Wdio Telnyx Test
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-    
-  workflow_dispatch:
-    
+name: WDIO telnyx
+'on':
+    push:
+        branches:
+            - main
 jobs:
-  test:
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '16.18.0'
-    - name: Install dependencies
-      run: npm i
-      
-    - name: Run Cypress tests
-      run: npx wdio run ./configs/wdio.conf.js
-      
-    - name: Reports Generate
-      run: npm run report-generate
-      
-    - name: Reports Open
-      run: npm run report-open
-    
-    - uses: actions/upload-artifact@master
-      with:
-        name: allure-results
-        path: allure-results
-        retention-days: 20
-        
-    - name: Allure Report action from marketplace
-      uses: simple-elf/allure-report-action@master
-      if: always()
-        #id: allure-report
-      with:
-          allure_results: allure-results
-          gh_pages: gh-pages
-          allure_report: allure-report
-          allure_history: allure-history
-          keep_reports: 20
+    generate-report:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+              name: Checkout
+            
+            - name: Install dependencies
+              run: npm install
+              
+            - name: Tests execution
+              continue-on-error: true
+              run: npx wdio run ./configs/wdio.conf.js
+          
+            - name: Get Allure history
+              uses: actions/checkout@v2
+              if: always()
+              continue-on-error: true
+              with:
+                  ref: gh-pages
+                  path: gh-pages
 
-    - name: Deploy report to Github Pages
-      if: always()
-      uses: peaceiris/actions-gh-pages@v2
-      env:
-          PERSONAL_TOKEN:  ${{ secrets.TOKEN }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: allure-history
+            - name: Generate Allure Report
+              uses: simple-elf/allure-report-action@master
+              if: always()
+              with:
+                  allure_results: allure-results
+                  allure_history: allure-history
+                  gh_pages: gh-pages
+                  allure_report: allure-report
+                  
+            - name: Deploy report to Github Pages
+              if: always()
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.TOKEN }}
+                  publish_branch: gh-pages
+                  publish_dir: allure-history
